@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" prefHeight="516.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.covid19.controller.GlobalController">
+   <children>
+      <ImageView fitHeight="556.0" fitWidth="746.0" layoutX="2.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/panel.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnhome" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnhomeOnAction" onMouseEntered="#btnhomeOnMouseEntered" onMouseExited="#btnhomeOnMouseExited" prefHeight="58.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="           Home" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <ImageView fx:id="imgHome" fitHeight="37.0" fitWidth="43.0" layoutX="27.0" layoutY="29.0" onMouseClicked="#imgHomeOnMouseClicked" onMouseEntered="#imgHomeOnMouseEntered" onMouseExited="#imgHomeOnMouseExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/home.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="238.0" layoutY="38.0" prefHeight="46.0" prefWidth="251.0" text="Global COVID-19" textFill="#5e3030">
+         <font>
+            <Font name="Tahoma Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="143.0" text="Last Updated" textFill="#291261">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbllastUpdated" layoutX="91.0" layoutY="177.0" textFill="#73708d">
+         <font>
+            <Font name="Tahoma" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="223.0" text="Confirmed Cases" textFill="#3a6f68">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblconfirmedCases" layoutX="91.0" layoutY="252.0" textFill="#6dcfd6">
+         <font>
+            <Font name="Tahoma" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="300.0" text="Recovered" textFill="#0e6113">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblrecovered" layoutX="91.0" layoutY="329.0" textFill="#61bc6a">
+         <font>
+            <Font name="Tahoma" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="91.0" layoutY="382.0" text="Deaths" textFill="#791b1b">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbldeaths" layoutX="91.0" layoutY="417.0" textFill="#a85959">
+         <font>
+            <Font name="Tahoma" size="16.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dtdate" layoutX="285.0" layoutY="146.0" onAction="#dtdateOnAction" prefHeight="37.0" prefWidth="202.0" />
+      <TextField fx:id="txtconfirmCases" layoutX="285.0" layoutY="226.0" onAction="#txtconfirmCasesOnAction" prefHeight="37.0" prefWidth="270.0" promptText="Enter the Number of Confirmed Cases">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="txtrecovered" layoutX="284.0" layoutY="304.0" onAction="#txtrecoveredOnAction" prefHeight="37.0" prefWidth="270.0" promptText="Enter the Number of Recovered Cases">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="txtdeaths" layoutX="285.0" layoutY="380.0" onAction="#txtdeathsOnAction" prefHeight="37.0" prefWidth="270.0" promptText="Enter the Number of Deaths">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button fx:id="btnupdate" layoutX="440.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnupdateOnAction" onMouseEntered="#btnupdateOnMouseEntered" onMouseExited="#btnupdateOnMouseExited" prefHeight="37.0" prefWidth="115.0" style="-fx-background-color: #d4cdae#d4cba7;" text="Update" textFill="#0d615e">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <CheckBox fx:id="chkupdate" layoutX="290.0" layoutY="432.0" mnemonicParsing="false" onAction="#chkupdateOnAction" text="I want to update this record" textFill="#9e1111">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

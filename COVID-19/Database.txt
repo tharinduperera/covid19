@@ -1,0 +1,82 @@
+drop database covid19;
+create database covid19;
+use covid19;
+create table users(
+	id varchar(5)not null,
+	name varchar(255) not null,
+	contact varchar(11)not null,
+	email varchar(255)not null,
+	username varchar(255)not null,
+	password varchar(255)not null,
+	role varchar(255) not null,
+	hqid varchar(100), 
+	constraint primary key(id)
+);
+
+create table global(
+	lastupdated varchar(10) not null,
+	confirmcases int,
+	recovered int,
+	deathes int,
+	total_confirmcases int,
+	total_recovered int,
+	total_deathes int,
+	status varchar(255)not null,
+	constraint primary key(lastupdated)
+);
+
+create table hospital(
+	hid varchar(5) not null,
+	hname varchar(255) not null,
+	hcity varchar(255) not null,
+	hdistrict varchar(255) not null,
+	hcapacity int not null,
+	director varchar(255) not null,
+	director_contact varchar(11)not null,
+	hcontact1 varchar(11) not null,
+	hcontact2 varchar(11),
+	hfax varchar(255),
+	hemail varchar(255),
+	user_id varchar(5),
+	status varchar(20),
+	constraint primary key(hid),
+	constraint foreign key(user_id) references users(id)
+);
+
+create table quarantine_center(
+	qid varchar(5) not null,
+	qname varchar(255)not null,
+	qcity varchar(255)not null,
+	qdistrict varchar(255)not null,
+	qcapacity int,
+	qhead varchar(255) not null,
+	qhead_contact varchar(11) not null,
+	qcontact1 varchar(11)not null,
+	qcontact2 varchar(11),
+	user_id varchar(5),
+	status varchar(20),
+	constraint primary key(qid),
+	constraint foreign key(user_id) references users(id)
+		
+);
+
+
+
+insert into users values('U001','Tharindu Perera','077-6143085','tharindu@gamil.com','thariya','12345','Admin','All');
+insert into users values('U002','Sano Perera','077-6143084','sano@gamil.com','sano','12345','PSTF Member','All');
+insert into users values('U003','Kamal Perera','077-6145085','kamal@gamil.com','kama','12345','Hospital IT','H001');
+insert into users values('U004','Ranjith Perera','077-6144085','ranjith@gamil.com','ranj','12345','Hospital IT','H002');
+insert into users values('U005','Fazaal Perera','077-6143685','fazaal@gamil.com','fasal','12345','Quarantine Center IT','Q001');
+
+insert into hospital values('H001','Hos1','Gampaha','Gampaha',1000,'D1','077-6143085','077-6143085','077-6143085','077-6143085','h1@gamil.com','U001','Reserved');
+insert into hospital values('H002','Hos2','Jaffna','Jaffna',1500,'D2','077-6143084','077-6143085','077-6143085','077-6143085','h2@gamil.com','U001','Reserved');
+insert into hospital values('H003','Hos3','Colombo','Colombo',2000,'D3','077-6145085','077-6143085','077-6143085','077-6143085','h3l@gamil.com','U001','Not Reserved');
+insert into hospital values('H004','Hos4','Kilinochchi','Kilinochchi',2500,'D4','077-6144085','077-6143085','077-6143085','077-6143085','h4@gamil.com','U001','Not Reserved');
+insert into hospital values('H005','Hos5','Gampaha','Gampaha',3000,'D5','077-6143685','077-6143085','077-6143085','077-6143085','h5@gamil.com','U001','Not Reserved');
+
+insert into quarantine_center values('Q001','Qos1','Gampaha','Gampaha',1000,'QH1','077-6143085','077-6143085','077-6143085','U001','Reserved');
+insert into quarantine_center values('Q002','Qos2','Jaffna','Jaffna',1500,'QH2','077-6143084','077-6143085','077-6143085','U001','Not Reserved');
+insert into quarantine_center values('Q003','Qos3','Colombo','Colombo',2000,'QH3','077-6145085','077-6143085','077-6143085','U001','Not Reserved');
+insert into quarantine_center values('Q004','Qos4','Kilinochchi','Kilinochchi',2500,'QH4','077-6144085','077-6143085','077-6143085','U001','Not Reserved');
+insert into quarantine_center values('Q005','Qos5','Gampaha','Gampaha',3000,'QH5','077-6143685','077-6143085','077-6143085','U001','Not Reserved');
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" prefHeight="516.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.covid19.controller.UserController">
+   <children>
+      <ImageView fitHeight="556.0" fitWidth="746.0" layoutX="2.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/panel.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnhome" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnhomeOnAction" onMouseEntered="#btnhomeOnMouseEntered" onMouseExited="#btnhomeOnMouseExited" prefHeight="58.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="           Home" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <ImageView fx:id="imgHome" fitHeight="37.0" fitWidth="43.0" layoutX="27.0" layoutY="29.0" onMouseClicked="#imgHomeOnMouseClicked" onMouseEntered="#imgHomeOnMouseEntered" onMouseExited="#imgHomeOnMouseExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/home.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="238.0" layoutY="26.0" prefHeight="49.0" prefWidth="251.0" text="Manage Users" textFill="#5e3030">
+         <font>
+            <Font name="Tahoma Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnnewUser" layoutX="486.0" layoutY="33.0" mnemonicParsing="false" onAction="#btnnewUserOnAction" onMouseEntered="#btnnewUserOnMouseEntered" onMouseExited="#btnnewUserOnMouseExited" prefHeight="37.0" prefWidth="115.0" style="-fx-background-color: #d0b6d4;" text="New User +" textFill="#498316">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <ColorAdjust />
+               </input>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font name="Tahoma" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtname" layoutX="20.0" layoutY="96.0" onAction="#txtnameOnAction" prefHeight="25.0" prefWidth="524.0" promptText="Enter the name">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="txtcontact" layoutX="20.0" layoutY="129.0" onAction="#txtcontactOnAction" prefHeight="25.0" prefWidth="524.0" promptText="Enter the contact number">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="txtemail" layoutX="20.0" layoutY="163.0" onAction="#txtemailOnAction" prefHeight="25.0" prefWidth="524.0" promptText="Enter the E-mail">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="txtusername" layoutX="20.0" layoutY="197.0" onAction="#txtusernameOnAction" prefHeight="25.0" prefWidth="524.0" promptText="Enter the username">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="txtfilter" layoutX="20.0" layoutY="343.0" onKeyReleased="#txtfilterOnKeyReleased" prefHeight="25.0" prefWidth="524.0" promptText="Filter by Username or Name">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font></TextField>
+      <ComboBox fx:id="cmbrole" layoutX="20.0" layoutY="267.0" onAction="#cmbroleOnAction" prefHeight="29.0" prefWidth="524.0" promptText="Select user role">
+         <effect>
+            <ColorAdjust brightness="0.1" contrast="0.1" />
+         </effect></ComboBox>
+      <TableView fx:id="tbluser" layoutX="20.0" layoutY="368.0" prefHeight="149.0" prefWidth="524.0">
+        <columns>
+          <TableColumn prefWidth="127.0" text="Username" />
+          <TableColumn prefWidth="139.0" text="Name" />
+            <TableColumn prefWidth="125.0" text="Role" />
+            <TableColumn prefWidth="132.0" text="Remove User" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnsave" layoutX="378.0" layoutY="305.0" mnemonicParsing="false" onAction="#btnsaveOnAction" onMouseEntered="#btnsaveOnMouseEntered" onMouseExited="#btnsaveOnMouseExited" prefHeight="29.0" prefWidth="166.0" text="Save" textFill="#4ca80f">
+         <font>
+            <Font name="Tahoma" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.24" contrast="0.29" />
+         </effect>
+      </Button>
+      <ComboBox fx:id="cmbhospital" layoutX="21.0" layoutY="305.0" onAction="#cmbhospitalOnAction" prefHeight="29.0" prefWidth="347.0" promptText="Select the Hospital">
+         <effect>
+            <ColorAdjust brightness="0.1" contrast="0.1" />
+         </effect>
+      </ComboBox>
+      <PasswordField fx:id="txtpassword" layoutX="21.0" layoutY="232.0" onAction="#txtpasswordOnAction" prefHeight="25.0" prefWidth="524.0" promptText="Enter the password">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+      </PasswordField>
+      <ComboBox fx:id="cmbquarantineCenter" layoutX="21.0" layoutY="305.0" onAction="#cmbquarantineCenterOnAction" prefHeight="29.0" prefWidth="347.0" promptText="Select the Quarantine Center">
+         <effect>
+            <ColorAdjust brightness="0.1" contrast="0.1" />
+         </effect>
+      </ComboBox>
+      <ImageView fx:id="imgEyeopen" fitHeight="29.0" fitWidth="23.0" layoutX="519.0" layoutY="234.0" onMouseClicked="#imgEyeopenOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/showeye.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtpassword1" layoutX="21.0" layoutY="232.0" onAction="#txtpassword1OnAction" prefHeight="26.0" prefWidth="524.0" promptText="Enter the password">
+         <font>
+            <Font name="Tahoma" size="13.0" />
+         </font>
+      </TextField>
+      <ImageView fx:id="imgEyeclose" fitHeight="29.0" fitWidth="23.0" layoutX="519.0" layoutY="234.0" onMouseClicked="#imgEyecloseOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/closeeye.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblName" layoutX="456.0" layoutY="87.0" prefHeight="17.0" prefWidth="36.0" text="Name" textFill="#946262">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblContact" layoutX="453.0" layoutY="121.0" prefHeight="17.0" prefWidth="43.0" text="Contact" textFill="#946262">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmail" layoutX="454.0" layoutY="155.0" prefHeight="17.0" prefWidth="36.0" text="E-mail" textFill="#946262">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUsername" layoutX="453.0" layoutY="189.0" prefHeight="17.0" prefWidth="58.0" text="Username" textFill="#946262">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPassword" layoutX="452.0" layoutY="224.0" prefHeight="17.0" prefWidth="58.0" text="Password" textFill="#946262">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblfilter" layoutX="377.0" layoutY="335.0" prefHeight="17.0" prefWidth="166.0" text="Filter by Username or Name" textFill="#946262">
+         <font>
+            <Font name="Tahoma" size="12.0" />
+         </font>
+      </Label>
+
+   </children>
+</AnchorPane>
